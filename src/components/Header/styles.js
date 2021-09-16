@@ -2,13 +2,19 @@ import { makeStyles, alpha } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   container: {
-    margin: "0 2%",
+    height: "30em",
+    backgroundColor: "#A239EA",
+    position: "relative",
+  },
+  contents: {
     display: "flex",
     alignItems: "center",
+    padding: 20,
   },
   title: {
-    color: "#FF4C29",
-    fontFamily: "Architects Daughter",
+    flexGrow: 1,
+    color: "white",
+    fontFamily: "Arvo",
   },
   search: {
     position: "relative",
@@ -43,12 +49,17 @@ export default makeStyles((theme) => ({
     color: "white",
   },
   menu: {
-    color: "#FF4C29",
-    fontFamily: "Verdana",
+    color: "white",
+    fontFamily: "Arvo",
     paddingLeft: "50px",
     "&:hover": {
-      textDecoration: "underline",
       cursor: "pointer",
     },
+  },
+  vector: {
+    position: "absolute",
+    right: 0,
+    top: 250,
+    [theme.breakpoints.down("lg")]: {},
   },
 }));
