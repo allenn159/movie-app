@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import "./App.css";
+import { Header } from "./components";
 import api from "../src/api/index";
+
+import "./App.css";
 
 function App() {
   // const [searchResults, setSearchResults] = useState([]);
@@ -25,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      
+      <Header />
     </div>
   );
 }
