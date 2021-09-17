@@ -1,21 +1,11 @@
 import React, { useState } from "react";
-import { Header } from "./components";
+import { Header, FrontPage } from "./components";
 import api from "../src/api/index";
 
 import "./App.css";
 
 function App() {
-  // const [searchResults, setSearchResults] = useState([]);
-  // const [movie, setMovie] = useState("");
-
-  // const search = async (term) => {
-  //   const { data } = await api.get("/", {
-  //     params: {
-  //       s: term,
-  //     },
-  //   });
-  //   setSearchResults(data.Search);
-  // };
+  const [searchTerm, setSearchTerm] = useState("");
 
   // const onHandleSearch = (e) => {
   //   e.preventDefault();
@@ -28,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <FrontPage searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     </div>
   );
 }
