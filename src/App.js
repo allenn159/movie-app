@@ -6,6 +6,16 @@ import "./App.css";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  // const search = async (term) => {
+  //   const { data } = await api.get("/", {
+  //     params: {
+  //       s: term,
+  //     },
+  //   });
+  //   setSearchResults(data.Search);
+  // };
 
   // const onHandleSearch = (e) => {
   //   e.preventDefault();
@@ -18,7 +28,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <FrontPage searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <FrontPage
+        searchResults={searchResults}
+        setSearchResults={setSearchResults}
+      />
     </div>
   );
 }

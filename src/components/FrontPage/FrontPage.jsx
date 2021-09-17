@@ -2,11 +2,11 @@ import React from "react";
 import Search from "./Search/Search";
 import SearchResults from "./Search/SearchResults";
 
-const FrontPage = ({ searchTerm, setSearchTerm }) => {
+const FrontPage = ({ searchResults, setSearchResults }) => {
   return (
     <>
-      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <SearchResults />
+      <Search setSearchResults={setSearchResults} />
+      <SearchResults searchResults={searchResults} />
     </>
   );
 };

@@ -1,11 +1,32 @@
-import React, { useState } from "react";
-import useStyles from "../styles";
+import React, { useState, useEffect, useMemo } from "react";
+import api from "../../../api/index";
 
 import { InputBase } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
+import useStyles from "../styles";
 
-const Search = ({ searchTerm, setSearchTerm }) => {
+const Search = ({ setSearchResults }) => {
   const classes = useStyles();
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const search = async (term) => {
+    const { data } = await api.get("/", {
+      params: {
+        s: term,
+      },
+    });
+    setSearchResults(data.Search);
+  };
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      console.log(searchTerm);
+      search(searchTerm);
+    }, 500);
+    return () => {
+      clearTimeout(delayDebounceFn);
+    };
+  }, [searchTerm]);
 
   return (
     <>
