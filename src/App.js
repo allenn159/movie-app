@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Header, FrontPage } from "./components";
 import api from "../src/api/index";
 
@@ -24,6 +24,8 @@ function App() {
   // };
 
   // console.log(searchResults);
+
+  useMemo(() => setSearchResults, [searchResults]);
 
   return (
     <div className="App">

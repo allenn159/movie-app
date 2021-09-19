@@ -1,12 +1,13 @@
-import React from "react";
-import Search from "./Search/Search";
+import React, { useState } from "react";
+import Vector from "./Search/Vector";
 import SearchResults from "./Search/SearchResults";
 
 const FrontPage = ({ searchResults, setSearchResults }) => {
+  const [loading, setLoading] = useState(null);
   return (
     <>
-      <Search setSearchResults={setSearchResults} />
-      <SearchResults searchResults={searchResults} />
+      <Vector setSearchResults={setSearchResults} setLoading={setLoading} />
+      <SearchResults searchResults={searchResults} loading={loading} />
     </>
   );
 };

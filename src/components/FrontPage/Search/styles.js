@@ -42,4 +42,8 @@ export default makeStyles((theme) => ({
     color: "white",
     fontSize: "1.5em",
   },
+  card: {
+    display: "flex",
+    justifyContent: "center",
+  },
 }));
