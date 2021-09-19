@@ -42,8 +42,25 @@ export default makeStyles((theme) => ({
     color: "white",
     fontSize: "1.5em",
   },
+  resultsCont: {
+    marginTop: "20px",
+  },
   card: {
-    display: "flex",
-    justifyContent: "center",
+    textAlign: "center",
+    backgroundColor: "#E8F6EF",
+  },
+  moviePoster: {
+    textAlign: "center",
+    height: "45vh",
+    borderRadius: "10px",
+    marginTop: "10px",
+  },
+  movieTitle: {
+    fontFamily: "Arvo",
+    display: "block",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    marginTop: "10px",
   },
 }));
