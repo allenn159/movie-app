@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import api from "../../../api/index";
 
 import useStyles from "./styles";
-import { InputBase, CircularProgress } from "@material-ui/core";
+import { InputBase } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 
 const Search = ({ setSearchResults }) => {

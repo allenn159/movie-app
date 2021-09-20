@@ -10,11 +10,17 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     padding: 20,
     margin: "0 5%",
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "center",
+    },
   },
   title: {
     flexGrow: 1,
     color: "white",
     fontFamily: "Arvo",
+    [theme.breakpoints.down("sm")]: {
+      flexGrow: 0,
+    },
   },
   menu: {
     color: "white",
@@ -23,18 +29,8 @@ export default makeStyles((theme) => ({
     "&:hover": {
       cursor: "pointer",
     },
-  },
-  vectorCont: {
-    display: "flex",
-    alignItems: "center",
-  },
-  vector: {
-    marginLeft: "20%",
-    [theme.breakpoints.down("lg")]: {},
-  },
-  vectorText: {
-    fontFamily: "Arvo",
-    color: "white",
-    fontSize: "1.5em",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
 }));

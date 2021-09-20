@@ -8,6 +8,9 @@ export default makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "50px",
+    },
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
@@ -31,11 +34,16 @@ export default makeStyles((theme) => ({
   vectorCont: {
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
     backgroundColor: "#A239EA",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
   },
   vector: {
-    marginLeft: "20%",
-    [theme.breakpoints.down("lg")]: {},
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "7%",
+    },
   },
   vectorText: {
     fontFamily: "Arvo",

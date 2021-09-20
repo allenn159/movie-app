@@ -26,7 +26,7 @@ const SearchResults = ({ searchResults }) => {
         <Grid container spacing={3}>
           {filteredArr.map((movie) => (
             // API has some duplicate results so using index as key.
-            <Grid key={movie.imdbID} item xs={4}>
+            <Grid key={movie.imdbID} item xs={12} sm={6} lg={4}>
               <Grow in>
                 <Card className={classes.card} variant="elevation">
                   <CardContent>
