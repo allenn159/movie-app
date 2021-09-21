@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Typography } from "@material-ui/core";
 import TheatersIcon from "@material-ui/icons/Theaters";
 
@@ -9,7 +10,12 @@ const Header = () => {
   return (
     <div className={classes.container}>
       <div className={classes.contents}>
-        <Typography className={classes.title} variant="h3">
+        <Typography
+          component={Link}
+          to={"/"}
+          className={classes.title}
+          variant="h3"
+        >
           Huntflix
           <TheatersIcon style={{ marginLeft: "10px" }} />
         </Typography>

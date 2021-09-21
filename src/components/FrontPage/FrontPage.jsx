@@ -8,7 +8,10 @@ const FrontPage = ({ searchResults, setSearchResults }) => {
     <>
       <ScrollToTop color="#A239EA" smooth />
       <Vector setSearchResults={setSearchResults} />
-      <SearchResults searchResults={searchResults} />
+      <SearchResults
+        searchResults={searchResults}
+        setSearchResults={setSearchResults}
+      />
     </>
   );
 };

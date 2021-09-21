@@ -8,6 +8,7 @@ export default makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
+
     [theme.breakpoints.down("sm")]: {
       marginBottom: "50px",
     },
@@ -27,7 +28,6 @@ export default makeStyles((theme) => ({
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
-    width: "100%",
     height: 35,
     color: "white",
   },
@@ -41,14 +41,15 @@ export default makeStyles((theme) => ({
     },
   },
   vector: {
-    [theme.breakpoints.down("sm")]: {
-      marginLeft: "7%",
-    },
+    maxWidth: "100%",
+    height: "auto",
+    [theme.breakpoints.down("sm")]: {},
   },
   vectorText: {
     fontFamily: "Arvo",
     color: "white",
-    fontSize: "1.5em",
+    fontSize: "1.5rem",
+    [theme.breakpoints.down("xs")]: {},
   },
   resultsCont: {
     marginTop: "20px",
@@ -59,7 +60,8 @@ export default makeStyles((theme) => ({
   },
   moviePoster: {
     textAlign: "center",
-    height: "45vh",
+    maxHeight: "400px",
+    width: "auto",
     borderRadius: "10px",
     marginTop: "10px",
   },

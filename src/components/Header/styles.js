@@ -18,6 +18,7 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
     color: "white",
     fontFamily: "Arvo",
+    textDecoration: "none",
     [theme.breakpoints.down("sm")]: {
       flexGrow: 0,
     },

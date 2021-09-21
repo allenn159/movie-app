@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {
   Container,
@@ -26,17 +27,23 @@ const SearchResults = ({ searchResults }) => {
         <Grid container spacing={3}>
           {filteredArr.map((movie) => (
             // API has some duplicate results so using index as key.
-            <Grid key={movie.imdbID} item xs={12} sm={6} lg={4}>
-              <Grow in>
-                <Card className={classes.card} variant="elevation">
-                  <CardContent>
-                    <img className={classes.moviePoster} src={movie.Poster} />
-                    <Typography className={classes.movieTitle}>
-                      {movie.Title}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grow>
+            <Grid key={movie.imdbID} item xs={12} md={6} lg={4}>
+              <Link
+                to={`/movie/${movie.imdbID}`}
+                style={{ textDecoration: "none" }}
+              >
+                <Grow in>
+                  <Card className={classes.card} variant="elevation">
+                    <CardContent>
+                      <img className={classes.moviePoster} src={movie.Poster} />
+
+                      <Typography className={classes.movieTitle}>
+                        {movie.Title}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grow>
+              </Link>
             </Grid>
           ))}
         </Grid>

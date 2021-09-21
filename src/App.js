@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
-import { Header, FrontPage } from "./components";
+import { Header, FrontPage, MovieDetails } from "./components";
 import api from "../src/api/index";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./App.css";
 
@@ -10,13 +11,22 @@ function App() {
   useMemo(() => setSearchResults, [searchResults]);
 
   return (
-    <div className="App">
-      <Header />
-      <FrontPage
-        searchResults={searchResults}
-        setSearchResults={setSearchResults}
-      />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <FrontPage
+              searchResults={searchResults}
+              setSearchResults={setSearchResults}
+            />
+          </Route>
+          <Route exact path="/movie/:id">
+            <MovieDetails setSearchResults={setSearchResults} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
