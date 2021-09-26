@@ -7,7 +7,6 @@ import SearchIcon from "@material-ui/icons/Search";
 
 const Search = ({ setSearchResults }) => {
   const classes = useStyles();
-
   const [searchTerm, setSearchTerm] = useState("");
 
   const search = async (term) => {
@@ -21,6 +20,7 @@ const Search = ({ setSearchResults }) => {
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
+      // trim cuts out any empty space after the search term.
       search(searchTerm.trim());
     }, 400);
     return () => {

@@ -3,7 +3,7 @@ import Vector from "./Search/Vector";
 import SearchResults from "./Search/SearchResults";
 import ScrollToTop from "react-scroll-to-top";
 
-const FrontPage = ({ searchResults, setSearchResults }) => {
+const FrontPage = ({ searchResults, setSearchResults, setMovieID }) => {
   return (
     <>
       <ScrollToTop color="#A239EA" smooth />
@@ -11,6 +11,7 @@ const FrontPage = ({ searchResults, setSearchResults }) => {
       <SearchResults
         searchResults={searchResults}
         setSearchResults={setSearchResults}
+        setMovieID={setMovieID}
       />
     </>
   );

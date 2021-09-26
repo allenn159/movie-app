@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import useStyles from "./styles";
 
-const SearchResults = ({ searchResults }) => {
+const SearchResults = ({ searchResults, setSearchResults, setMovieID }) => {
   const classes = useStyles();
   if (!searchResults) return null;
 
@@ -20,14 +20,25 @@ const SearchResults = ({ searchResults }) => {
       a.findIndex((e) => e.imdbID === v.imdbID) === i && v.Poster !== "N/A"
   );
 
-  console.log(filteredArr);
+  const onHandleClick = (movieID) => {
+    setMovieID(movieID);
+    setSearchResults(null);
+  };
+
   return (
     <>
       <Container className={classes.resultsCont} maxWidth="lg">
         <Grid container spacing={3}>
           {filteredArr.map((movie) => (
             // API has some duplicate results so using index as key.
-            <Grid key={movie.imdbID} item xs={12} md={6} lg={4}>
+            <Grid
+              onClick={() => onHandleClick(movie.imdbID)}
+              key={movie.imdbID}
+              item
+              xs={12}
+              md={6}
+              lg={4}
+            >
               <Link
                 to={`/movie/${movie.imdbID}`}
                 style={{ textDecoration: "none" }}
