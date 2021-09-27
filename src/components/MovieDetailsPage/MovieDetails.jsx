@@ -73,7 +73,11 @@ const MovieDetails = ({ movieID }) => {
                         alt="Fresh"
                       />
                     ) : (
-                      <img src={splat} alt="Splat" />
+                      <img
+                        className={classes.rtEmblem}
+                        src={splat}
+                        alt="Splat"
+                      />
                     )}
                   </div>
                 )

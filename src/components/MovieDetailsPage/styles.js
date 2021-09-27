@@ -10,8 +10,8 @@ export default makeStyles((theme) => ({
   },
   image: {
     borderRadius: "5px",
-    maxHeight: "100vh",
-    maxWidth: "90vw",
+    maxWidth: "100%",
+    height: "auto",
   },
   paper: {
     backgroundColor: "#E8F6EF",
@@ -20,7 +20,7 @@ export default makeStyles((theme) => ({
     padding: "25px",
   },
   infoCont: {
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       margin: "25px 0",
     },
   },
