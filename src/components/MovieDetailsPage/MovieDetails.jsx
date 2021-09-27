@@ -37,35 +37,41 @@ const MovieDetails = ({ movieID }) => {
   return (
     <Container className={classes.container} maxWidth="lg">
       <Grid container>
-        <Grid item sm={6}>
+        <Grid className={classes.imageCont} item xs={12} md={6}>
           <img
             className={classes.image}
             src={movie.Poster.replace("SX300", "SX500")}
             alt="Movie Poster"
           />
         </Grid>
-        <Grid item sm={6}>
+        <Grid className={classes.infoCont} item xs={12} md={6}>
           <Paper className={classes.paper}>
             <div className={classes.paperContent}>
               <Typography className={classes.movieTitle} variant="h5">
-                {movie.Title}
+                {movie.Title} ({movie.Year})
               </Typography>
               <Typography className={classes.movieSummary} variant="h6">
                 {movie.Plot}
               </Typography>
               <div>
-                <p>
-                  <strong>Featuring: {movie.Actors}</strong>
-                </p>
-                <p>{movie.Year}</p>
+                <p className={classes.movieCast}>Featuring: {movie.Actors}</p>
               </div>
               {movie.Ratings.filter((e) => e.Source === "Rotten Tomatoes").map(
                 (el) => (
-                  <div key={el.Value}>
-                    <img src={rt} alt="Rotten Tomatoe" />
-                    <p>{el.Value}</p>
+                  <div className={classes.ratingsContainer} key={el.Value}>
+                    <img
+                      className={classes.rtLogo}
+                      src={rt}
+                      alt="Rotten Tomatoe"
+                    />
+                    <p className={classes.rtScore}>{el.Value}</p>
+
                     {el.Value >= "50%" ? (
-                      <img src={fresh} alt="Fresh" />
+                      <img
+                        className={classes.rtEmblem}
+                        src={fresh}
+                        alt="Fresh"
+                      />
                     ) : (
                       <img src={splat} alt="Splat" />
                     )}

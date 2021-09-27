@@ -43,13 +43,11 @@ export default makeStyles((theme) => ({
   vector: {
     maxWidth: "100%",
     height: "auto",
-    [theme.breakpoints.down("sm")]: {},
   },
   vectorText: {
     fontFamily: "Arvo",
     color: "white",
     fontSize: "1.5rem",
-    [theme.breakpoints.down("xs")]: {},
   },
   resultsCont: {
     marginTop: "20px",
