@@ -27,8 +27,8 @@ export default makeStyles((theme) => ({
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create("width"),
-    height: 35,
+    height: 50,
+    width: "100%",
     color: "white",
   },
   vectorCont: {

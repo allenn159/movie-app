@@ -36,9 +36,7 @@ const Search = ({ setSearchResults }) => {
         </div>
         <InputBase
           placeholder="Search…"
-          classes={{
-            input: classes.inputInput,
-          }}
+          className={classes.inputInput}
           inputProps={{ "aria-label": "search" }}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}

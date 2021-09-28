@@ -16,9 +16,15 @@ export default makeStyles((theme) => ({
     },
   },
   drawerBox: {
-    width: "250px",
+    width: "500px",
   },
   searchBar: {
     backgroundColor: "#A239EA",
+  },
+  imgCont: { textAlign: "center", padding: "20px" },
+  img: {
+    maxWidth: "200px",
+    height: "300px",
+    borderRadius: "10px",
   },
 }));

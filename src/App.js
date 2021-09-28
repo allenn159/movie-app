@@ -31,7 +31,10 @@ function App() {
             />
           </Route>
           <Route exact path="/compare">
-            <ComparePage setSearchResults={setSearchResults} />
+            <ComparePage
+              setSearchResults={setSearchResults}
+              searchResults={searchResults}
+            />
           </Route>
         </Switch>
       </div>

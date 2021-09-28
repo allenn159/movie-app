@@ -11,12 +11,13 @@ import AddIcon from "@mui/icons-material/Add";
 
 import useStyles from "./styles";
 
-const ComparePage = ({ setSearchResults }) => {
+const ComparePage = ({ setSearchResults, searchResults }) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = () => {
     setOpen(!open);
+    setSearchResults(null);
   };
 
   return (
@@ -33,8 +34,16 @@ const ComparePage = ({ setSearchResults }) => {
           <AddIcon className={classes.addIcon} style={{ fontSize: "50px" }} />
         </Grid>
       </Grid>
-      <SwipeableDrawer anchor={"left"} open={open} onClose={toggleDrawer}>
-        <LeftDrawer setSearchResults={setSearchResults} />
+      <SwipeableDrawer
+        anchor={"left"}
+        open={open}
+        onOpen={toggleDrawer}
+        onClose={toggleDrawer}
+      >
+        <LeftDrawer
+          setSearchResults={setSearchResults}
+          searchResults={searchResults}
+        />
       </SwipeableDrawer>
     </Container>
   );
