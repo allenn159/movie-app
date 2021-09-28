@@ -7,11 +7,12 @@ export default makeStyles((theme) => ({
   contents: {
     display: "flex",
     alignItems: "center",
+    justifyContent: "space-between",
     padding: 20,
     margin: "0 5%",
-    justifyContent: "space-between",
     [theme.breakpoints.down("sm")]: {
-      justifyContent: "center",
+      alignItems: "baseline",
+      margin: 0,
     },
   },
   title: {
@@ -21,17 +22,21 @@ export default makeStyles((theme) => ({
     padding: "0 25px",
     [theme.breakpoints.down("sm")]: {
       flexGrow: 0,
+      fontSize: "30px",
+      padding: "0 10px",
     },
   },
   menu: {
     color: "white",
     fontFamily: "Arvo",
-    padding: "0 30px",
+    padding: "0 25px",
+    textDecoration: "none",
     "&:hover": {
       cursor: "pointer",
     },
     [theme.breakpoints.down("sm")]: {
-      display: "none",
+      flexGrow: 0,
+      padding: "0 10px",
     },
   },
 }));

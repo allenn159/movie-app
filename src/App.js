@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Header, FrontPage, MovieDetails } from "./components";
+import { Header, FrontPage, MovieDetails, ComparePage } from "./components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./App.css";
@@ -29,6 +29,9 @@ function App() {
               setSearchResults={setSearchResults}
               movieID={movieID}
             />
+          </Route>
+          <Route exact path="/compare">
+            <ComparePage setSearchResults={setSearchResults} />
           </Route>
         </Switch>
       </div>
