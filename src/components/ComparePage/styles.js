@@ -10,6 +10,11 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     height: "600px",
   },
+  gridItem2: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   addIcon: {
     "&:hover": {
       cursor: "pointer",
@@ -17,14 +22,40 @@ export default makeStyles((theme) => ({
   },
   drawerBox: {
     width: "500px",
+    [theme.breakpoints.down("md")]: {
+      width: "250px",
+    },
   },
   searchBar: {
     backgroundColor: "#A239EA",
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: -50,
+    },
   },
-  imgCont: { textAlign: "center", padding: "20px" },
-  img: {
-    maxWidth: "200px",
-    height: "300px",
+  imgCont: {
+    textAlign: "center",
+    padding: "10px",
+  },
+  searchImg: {
+    maxWidth: "100%",
+    height: "auto",
     borderRadius: "10px",
+    "&:hover": {
+      cursor: "pointer",
+    },
+  },
+  searchImgText: {
+    fontFamily: "Arvo",
+  },
+  paper: { backgroundColor: "#E8F6EF", maxWidth: "450px" },
+  img: {
+    borderRadius: "10px",
+    maxWidth: "100%",
+    height: "auto",
+    marginTop: "15px",
+  },
+  movieTitleText: {
+    marginTop: "10px",
+    fontFamily: "Arvo",
   },
 }));

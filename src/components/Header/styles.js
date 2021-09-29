@@ -11,7 +11,6 @@ export default makeStyles((theme) => ({
     padding: 20,
     margin: "0 5%",
     [theme.breakpoints.down("sm")]: {
-      alignItems: "baseline",
       margin: 0,
     },
   },
@@ -30,6 +29,7 @@ export default makeStyles((theme) => ({
     color: "white",
     fontFamily: "Arvo",
     padding: "0 25px",
+    fontSize: "25px",
     textDecoration: "none",
     "&:hover": {
       cursor: "pointer",

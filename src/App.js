@@ -10,8 +10,6 @@ function App() {
 
   useMemo(() => setSearchResults, [searchResults]);
 
-  console.log(searchResults);
-
   return (
     <Router>
       <div className="App">
