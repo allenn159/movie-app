@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Search from "./Search";
 import VectorIcon from "../../../assets/vector.svg";
 
@@ -10,7 +10,7 @@ const Vector = ({ setSearchResults, setLoading }) => {
   return (
     <>
       <div className={classes.vectorCont}>
-        <img src={VectorIcon} className={classes.vector} />
+        <img src={VectorIcon} className={classes.vector} alt="Homepage Icon" />
         <div>
           <p className={classes.vectorText}>Search your favorite movies...</p>
           <Search setSearchResults={setSearchResults} setLoading={setLoading} />

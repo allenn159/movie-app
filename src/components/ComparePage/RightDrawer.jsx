@@ -47,6 +47,7 @@ const RightDrawer = ({
                   onClick={() => onClickHandler(e.imdbID)}
                   className={classes.searchImg}
                   src={e.Poster}
+                  alt={e.Title}
                 />
                 <p className={classes.searchImgText}>{e.Title}</p>
               </div>

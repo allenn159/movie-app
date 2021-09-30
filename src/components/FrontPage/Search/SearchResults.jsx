@@ -46,7 +46,11 @@ const SearchResults = ({ searchResults, setSearchResults, setMovieID }) => {
                 <Grow in>
                   <Card className={classes.card} variant="elevation">
                     <CardContent>
-                      <img className={classes.moviePoster} src={movie.Poster} />
+                      <img
+                        className={classes.moviePoster}
+                        src={movie.Poster}
+                        alt={movie.Title}
+                      />
 
                       <Typography className={classes.movieTitle}>
                         {movie.Title}

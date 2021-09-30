@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Paper, Typography, Button } from "@material-ui/core";
+import { Paper, Button } from "@material-ui/core";
 import useStyles from "./styles";
 
 const LeftMovie = ({
@@ -9,16 +9,15 @@ const LeftMovie = ({
   setLeftMovie,
   toggleLeftDrawer,
 }) => {
+  const classes = useStyles();
+
   const leftBO = leftMovie.BoxOffice.replace(/[^\w]/g, "");
   const leftMS = leftMovie.Metascore.replace(/[^\w]/g, "");
   const leftRating = leftMovie.imdbRating.replace(/[^\w]/g, "");
-  const leftVotes = leftMovie.imdbVotes.replace(/[^\w]/g, "");
   const rightBO = rightMovie?.BoxOffice.replace(/[^\w]/g, "");
   const rightMS = rightMovie?.Metascore.replace(/[^\w]/g, "");
   const rightRating = rightMovie?.imdbRating.replace(/[^\w]/g, "");
-  const rightVotes = rightMovie?.imdbVotes.replace(/[^\w]/g, "");
 
-  const classes = useStyles();
   return (
     <div>
       <Paper className={classes.paper}>
@@ -26,10 +25,11 @@ const LeftMovie = ({
           <img
             className={classes.img}
             src={leftMovie.Poster.replace("SX300", "SX350")}
+            alt={leftMovie.Title}
           />
-          <Typography className={classes.movieTitleText} variant="h6">
+          <p className={classes.movieTitleText}>
             {leftMovie.Title} ({leftMovie.Year})
-          </Typography>
+          </p>
           <div>
             <p
               className={
@@ -43,14 +43,27 @@ const LeftMovie = ({
               Box Office: {""}
               {!leftMovie.BoxOffice ? "N/A" : leftMovie.BoxOffice}
             </p>
-            <p className={classes.reviewText}>
+            <p
+              className={
+                !rightMovie
+                  ? classes.reviewText
+                  : leftMS >= rightMS
+                  ? classes.green
+                  : classes.red
+              }
+            >
               Metascore: {leftMovie.Metascore}
             </p>
-            <p className={classes.reviewText}>
+            <p
+              className={
+                !rightMovie
+                  ? classes.reviewText
+                  : leftRating >= rightRating
+                  ? classes.green
+                  : classes.red
+              }
+            >
               IMDB Rating: {leftMovie.imdbRating}
-            </p>
-            <p className={classes.reviewText}>
-              IMDB Votes: {leftMovie.imdbVotes}
             </p>
           </div>
         </div>

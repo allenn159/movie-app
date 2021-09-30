@@ -3,6 +3,10 @@ import { makeStyles } from "@material-ui/core/styles";
 export default makeStyles((theme) => ({
   cont: {
     marginTop: "15px",
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "15px",
+      marginTop: "5px",
+    },
   },
   gridItem: {
     display: "flex",
@@ -34,7 +38,7 @@ export default makeStyles((theme) => ({
   },
   searchImg: {
     maxWidth: "100%",
-    height: "auto",
+    height: "350px",
     borderRadius: "10px",
     "&:hover": {
       cursor: "pointer",
@@ -45,22 +49,31 @@ export default makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: "#E8F6EF",
-    maxWidth: "350px",
-    height: "auto",
+    width: "450px",
+    height: "675px",
+    marginTop: "10px",
+    [theme.breakpoints.down("xs")]: {
+      width: "325px",
+      height: "auto",
+    },
   },
   imgCont: {
     textAlign: "center",
-    padding: "10px 20px",
+    padding: "10px",
   },
   img: {
     borderRadius: "10px",
     maxWidth: "100%",
-    height: "auto",
+    height: "450px",
     marginTop: "15px",
   },
   movieTitleText: {
-    marginTop: "10px",
+    marginTop: "15px",
+    fontSize: "20px",
     fontFamily: "Arvo",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   },
   reviewText: {
     fontFamily: "Arvo",
@@ -98,6 +111,6 @@ export default makeStyles((theme) => ({
   red: {
     fontFamily: "Arvo",
     fontSize: "18px",
-    color: "#F55C47",
+    color: "#FF0000",
   },
 }));

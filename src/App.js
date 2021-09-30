@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { Header, FrontPage, MovieDetails, ComparePage } from "./components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -7,8 +7,6 @@ import "./App.css";
 function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [movieID, setMovieID] = useState("");
-
-  useMemo(() => setSearchResults, [searchResults]);
 
   return (
     <Router>
