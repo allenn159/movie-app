@@ -5,11 +5,11 @@ import api from "../../api/index";
 import { Box, Grid, Grow } from "@material-ui/core";
 import useStyles from "./styles";
 
-const LeftDrawer = ({
+const RightDrawer = ({
   setSearchResults,
   searchResults,
-  setLeftMovie,
-  setOpenLeft,
+  setRightMovie,
+  setOpenRight,
 }) => {
   const classes = useStyles();
 
@@ -24,12 +24,12 @@ const LeftDrawer = ({
         i: id,
       },
     });
-    setLeftMovie(data);
+    setRightMovie(data);
   };
 
   const onClickHandler = (id) => {
     searchByID(id);
-    setOpenLeft(false);
+    setOpenRight(false);
     setSearchResults(null);
   };
 
@@ -58,4 +58,4 @@ const LeftDrawer = ({
   );
 };
 
-export default LeftDrawer;
+export default RightDrawer;

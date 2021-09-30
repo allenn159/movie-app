@@ -13,6 +13,7 @@ const Search = ({ setSearchResults }) => {
     const { data } = await api.get("/", {
       params: {
         s: term,
+        type: "movie",
       },
     });
     setSearchResults(data.Search);

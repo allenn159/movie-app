@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   cont: {
-    marginTop: "25px",
+    marginTop: "15px",
   },
   gridItem: {
     display: "flex",
@@ -32,10 +32,6 @@ export default makeStyles((theme) => ({
       marginBottom: -50,
     },
   },
-  imgCont: {
-    textAlign: "center",
-    padding: "10px",
-  },
   searchImg: {
     maxWidth: "100%",
     height: "auto",
@@ -47,7 +43,15 @@ export default makeStyles((theme) => ({
   searchImgText: {
     fontFamily: "Arvo",
   },
-  paper: { backgroundColor: "#E8F6EF", maxWidth: "450px" },
+  paper: {
+    backgroundColor: "#E8F6EF",
+    maxWidth: "350px",
+    height: "auto",
+  },
+  imgCont: {
+    textAlign: "center",
+    padding: "10px 20px",
+  },
   img: {
     borderRadius: "10px",
     maxWidth: "100%",
@@ -55,7 +59,34 @@ export default makeStyles((theme) => ({
     marginTop: "15px",
   },
   movieTitleText: {
-    marginTop: "10px",
+    margin: "10px 10% 0 10%",
     fontFamily: "Arvo",
+  },
+  reviewText: {
+    fontFamily: "Arvo",
+  },
+  buttonCont: {
+    marginTop: "10px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  searchNewBtn: {
+    backgroundColor: "#A239EA",
+    color: "#fff",
+    fontFamily: "Lato",
+    fontSize: "15px",
+    fontWeight: 700,
+    height: "40px",
+    width: "48%",
+  },
+  removeBtn: {
+    backgroundColor: "#F55C47",
+    color: "#fff",
+    fontFamily: "Lato",
+    fontSize: "15px",
+    fontWeight: 700,
+    height: "40px",
+    width: "48%",
   },
 }));

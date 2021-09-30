@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LeftDrawer from "./LeftDrawer";
+import RightDrawer from "./RightDrawer";
+import LeftMovie from "./LeftMovie";
+
 import {
   Container,
   Grid,
   Paper,
   Typography,
   SwipeableDrawer,
+  Button,
 } from "@material-ui/core";
 import AddIcon from "@mui/icons-material/Add";
 
@@ -13,16 +17,26 @@ import useStyles from "./styles";
 
 const ComparePage = ({ setSearchResults, searchResults }) => {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [openLeft, setOpenLeft] = useState(false);
+  const [openRight, setOpenRight] = useState(false);
   const [leftMovie, setLeftMovie] = useState(null);
   const [rightMovie, setRightMovie] = useState(null);
 
-  const toggleDrawer = () => {
-    setOpen(!open);
+  const toggleLeftDrawer = () => {
+    setOpenLeft(!openLeft);
+    setSearchResults(null);
+  };
+
+  const toggleRightDrawer = () => {
+    setOpenRight(!openRight);
     setSearchResults(null);
   };
 
   console.log(leftMovie);
+
+  useEffect(() => {
+    setSearchResults(null);
+  }, []);
 
   return (
     <Container className={classes.cont} maxWidth="lg">
@@ -35,47 +49,50 @@ const ComparePage = ({ setSearchResults, searchResults }) => {
         >
           {!leftMovie ? (
             <AddIcon
-              onClick={toggleDrawer}
+              onClick={toggleLeftDrawer}
               className={classes.addIcon}
               style={{ fontSize: "50px" }}
             />
           ) : (
-            <div>
-              <Paper className={classes.paper}>
-                <div className={classes.imgCont}>
-                  <img
-                    className={classes.img}
-                    src={leftMovie.Poster.replace("SX300", "SX350")}
-                  />
-                  <Typography className={classes.movieTitleText} variant="h6">
-                    {leftMovie.Title}
-                  </Typography>
-                  <div>
-                    <p>Box Office: {leftMovie.BoxOffice}</p>
-                    <p>Metascore: {leftMovie.Metascore}</p>
-                    <p>IMDB Rating: {leftMovie.imdbRating}</p>
-                    <p>IMDB Votes: {leftMovie.imdbVotes}</p>
-                  </div>
-                </div>
-              </Paper>
-            </div>
+            <LeftMovie
+              leftMovie={leftMovie}
+              setLeftMovie={setLeftMovie}
+              toggleDrawer={toggleLeftDrawer}
+            />
           )}
         </Grid>
         <Grid className={classes.gridItem} item xs={12} md={6}>
-          <AddIcon className={classes.addIcon} style={{ fontSize: "50px" }} />
+          <AddIcon
+            onClick={toggleRightDrawer}
+            className={classes.addIcon}
+            style={{ fontSize: "50px" }}
+          />
         </Grid>
       </Grid>
       <SwipeableDrawer
         anchor={"left"}
-        open={open}
-        onOpen={toggleDrawer}
-        onClose={toggleDrawer}
+        open={openLeft}
+        onOpen={toggleLeftDrawer}
+        onClose={toggleLeftDrawer}
       >
         <LeftDrawer
           setSearchResults={setSearchResults}
           searchResults={searchResults}
           setLeftMovie={setLeftMovie}
-          setOpen={setOpen}
+          setOpenLeft={setOpenLeft}
+        />
+      </SwipeableDrawer>
+      <SwipeableDrawer
+        anchor={"right"}
+        open={openRight}
+        onOpen={toggleRightDrawer}
+        onClose={toggleRightDrawer}
+      >
+        <RightDrawer
+          setRightMovie={setRightMovie}
+          setSearchResults={setSearchResults}
+          searchResults={searchResults}
+          setOpenRight={setOpenRight}
         />
       </SwipeableDrawer>
     </Container>
