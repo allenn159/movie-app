@@ -2,15 +2,9 @@ import React, { useState, useEffect } from "react";
 import LeftDrawer from "./LeftDrawer";
 import RightDrawer from "./RightDrawer";
 import LeftMovie from "./LeftMovie";
+import RightMovie from "./RightMovie";
 
-import {
-  Container,
-  Grid,
-  Paper,
-  Typography,
-  SwipeableDrawer,
-  Button,
-} from "@material-ui/core";
+import { Container, Grid, SwipeableDrawer } from "@material-ui/core";
 import AddIcon from "@mui/icons-material/Add";
 
 import useStyles from "./styles";
@@ -31,8 +25,6 @@ const ComparePage = ({ setSearchResults, searchResults }) => {
     setOpenRight(!openRight);
     setSearchResults(null);
   };
-
-  console.log(leftMovie);
 
   useEffect(() => {
     setSearchResults(null);
@@ -56,17 +48,32 @@ const ComparePage = ({ setSearchResults, searchResults }) => {
           ) : (
             <LeftMovie
               leftMovie={leftMovie}
+              rightMovie={rightMovie}
               setLeftMovie={setLeftMovie}
-              toggleDrawer={toggleLeftDrawer}
+              toggleLeftDrawer={toggleLeftDrawer}
             />
           )}
         </Grid>
-        <Grid className={classes.gridItem} item xs={12} md={6}>
-          <AddIcon
-            onClick={toggleRightDrawer}
-            className={classes.addIcon}
-            style={{ fontSize: "50px" }}
-          />
+        <Grid
+          className={!rightMovie ? classes.gridItem : classes.gridItem2}
+          item
+          xs={12}
+          md={6}
+        >
+          {!rightMovie ? (
+            <AddIcon
+              onClick={toggleRightDrawer}
+              className={classes.addIcon}
+              style={{ fontSize: "50px" }}
+            />
+          ) : (
+            <RightMovie
+              rightMovie={rightMovie}
+              leftMovie={leftMovie}
+              setRightMovie={setRightMovie}
+              toggleRightDrawer={toggleRightDrawer}
+            />
+          )}
         </Grid>
       </Grid>
       <SwipeableDrawer

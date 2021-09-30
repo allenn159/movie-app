@@ -3,7 +3,21 @@ import React from "react";
 import { Paper, Typography, Button } from "@material-ui/core";
 import useStyles from "./styles";
 
-const LeftMovie = ({ leftMovie, setLeftMovie, toggleLeftDrawer }) => {
+const LeftMovie = ({
+  leftMovie,
+  rightMovie,
+  setLeftMovie,
+  toggleLeftDrawer,
+}) => {
+  const leftBO = leftMovie.BoxOffice.replace(/[^\w]/g, "");
+  const leftMS = leftMovie.Metascore.replace(/[^\w]/g, "");
+  const leftRating = leftMovie.imdbRating.replace(/[^\w]/g, "");
+  const leftVotes = leftMovie.imdbVotes.replace(/[^\w]/g, "");
+  const rightBO = rightMovie?.BoxOffice.replace(/[^\w]/g, "");
+  const rightMS = rightMovie?.Metascore.replace(/[^\w]/g, "");
+  const rightRating = rightMovie?.imdbRating.replace(/[^\w]/g, "");
+  const rightVotes = rightMovie?.imdbVotes.replace(/[^\w]/g, "");
+
   const classes = useStyles();
   return (
     <div>
@@ -17,7 +31,15 @@ const LeftMovie = ({ leftMovie, setLeftMovie, toggleLeftDrawer }) => {
             {leftMovie.Title} ({leftMovie.Year})
           </Typography>
           <div>
-            <p className={classes.reviewText}>
+            <p
+              className={
+                !rightMovie
+                  ? classes.reviewText
+                  : leftBO >= rightBO
+                  ? classes.green
+                  : classes.red
+              }
+            >
               Box Office: {""}
               {!leftMovie.BoxOffice ? "N/A" : leftMovie.BoxOffice}
             </p>

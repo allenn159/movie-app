@@ -30,11 +30,12 @@ export default makeStyles((theme) => ({
     textAlign: "center",
   },
   movieSummary: {
-    marginTop: "10px",
+    marginTop: "20px",
   },
   movieCast: {
     fontFamily: "Arvo",
-    color: "#150050",
+    fontWeight: 700,
+    color: "#22577A",
   },
   ratingsContainer: {
     display: "flex",

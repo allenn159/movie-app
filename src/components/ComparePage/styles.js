@@ -59,11 +59,12 @@ export default makeStyles((theme) => ({
     marginTop: "15px",
   },
   movieTitleText: {
-    margin: "10px 10% 0 10%",
+    marginTop: "10px",
     fontFamily: "Arvo",
   },
   reviewText: {
     fontFamily: "Arvo",
+    fontSize: "18px",
   },
   buttonCont: {
     marginTop: "10px",
@@ -88,5 +89,15 @@ export default makeStyles((theme) => ({
     fontWeight: 700,
     height: "40px",
     width: "48%",
+  },
+  green: {
+    fontFamily: "Arvo",
+    fontSize: "18px",
+    color: "#0E49B5",
+  },
+  red: {
+    fontFamily: "Arvo",
+    fontSize: "18px",
+    color: "#F55C47",
   },
 }));
