@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import api from "../../api/index";
 import { useHistory } from "react-router-dom";
 
-import { Container, Grid, Paper, Typography } from "@material-ui/core";
+import { Container, Grid, Paper, Typography, Button } from "@material-ui/core";
 import useStyles from "./styles";
 
 import rt from "../../assets/rt.jpg";
@@ -27,8 +27,6 @@ const MovieDetails = ({ movieID }) => {
   useEffect(() => {
     searchByID(movieID);
   }, [movieID]);
-
-  console.log(movie);
 
   if (!movieID) window.location.reload(history.push("/"));
 

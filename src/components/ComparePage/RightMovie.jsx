@@ -11,12 +11,12 @@ const RightMovie = ({
 }) => {
   const classes = useStyles();
 
-  const leftBO = leftMovie?.BoxOffice.replace(/[^\w]/g, "");
-  const leftMS = leftMovie?.Metascore.replace(/[^\w]/g, "");
-  const leftRating = leftMovie?.imdbRating.replace(/[^\w]/g, "");
-  const rightBO = rightMovie.BoxOffice.replace(/[^\w]/g, "");
-  const rightMS = rightMovie.Metascore.replace(/[^\w]/g, "");
-  const rightRating = rightMovie.imdbRating.replace(/[^\w]/g, "");
+  const leftBO = parseInt(leftMovie?.BoxOffice.replace(/[^\w]/g, ""));
+  const leftMS = parseInt(leftMovie?.Metascore.replace(/[^\w]/g, ""));
+  const leftRating = parseInt(leftMovie?.imdbRating.replace(/[^\w]/g, ""));
+  const rightBO = parseInt(rightMovie.BoxOffice.replace(/[^\w]/g, ""));
+  const rightMS = parseInt(rightMovie.Metascore.replace(/[^\w]/g, ""));
+  const rightRating = parseInt(rightMovie.imdbRating.replace(/[^\w]/g, ""));
 
   return (
     <div>
