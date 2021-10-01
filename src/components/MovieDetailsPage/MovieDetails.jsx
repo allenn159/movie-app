@@ -67,7 +67,7 @@ const MovieDetails = ({ movieID, searchResults, setSearchResults }) => {
               </Typography>
               <div>
                 <p className={classes.movieCast}>Featuring: {movie.Actors}</p>
-                <p>{movie.Rated}</p>
+                <p>Rated: {movie.Rated}</p>
               </div>
               {movie.Ratings.filter((e) => e.Source === "Rotten Tomatoes").map(
                 (el) => (
