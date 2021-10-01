@@ -39,6 +39,7 @@ const Search = ({ setSearchResults }) => {
           placeholder="Search…"
           className={classes.inputInput}
           inputProps={{ "aria-label": "search" }}
+          style={{ color: "white" }}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
