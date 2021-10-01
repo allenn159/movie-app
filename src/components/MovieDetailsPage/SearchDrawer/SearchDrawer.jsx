@@ -17,7 +17,15 @@ const SearchDrawer = ({
       a.findIndex((e) => e.imdbID === v.imdbID) === i && v.Poster !== "N/A"
   );
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 80,
+      behavior: "smooth",
+    });
+  };
+
   const onClickHandler = (id) => {
+    scrollToTop();
     searchByID(id);
     setOpen(false);
     setSearchResults(null);

@@ -26,6 +26,7 @@ const MovieDetails = ({ movieID, searchResults, setSearchResults }) => {
 
   const toggleDrawer = () => {
     setOpen(!open);
+    setSearchResults(null);
   };
 
   const searchByID = async (id) => {

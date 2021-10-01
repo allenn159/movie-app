@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const KEY = "b747e67e";
+const KEY = `${process.env.REACT_APP_API_KEY}`;
 
 export default axios.create({
   baseURL: "http://omdbapi.com/",

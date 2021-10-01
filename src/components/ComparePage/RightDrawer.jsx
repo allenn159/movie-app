@@ -27,10 +27,18 @@ const RightDrawer = ({
     setRightMovie(data);
   };
 
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 700,
+      behavior: "smooth",
+    });
+  };
+
   const onClickHandler = (id) => {
     searchByID(id);
     setOpenRight(false);
     setSearchResults(null);
+    scrollUp();
   };
 
   return (
