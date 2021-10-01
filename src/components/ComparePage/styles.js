@@ -36,6 +36,10 @@ export default makeStyles((theme) => ({
       marginBottom: -50,
     },
   },
+  imgCont: {
+    textAlign: "center",
+    padding: "10px",
+  },
   searchImg: {
     maxWidth: "100%",
     height: "350px",
@@ -56,10 +60,6 @@ export default makeStyles((theme) => ({
       width: "325px",
       height: "auto",
     },
-  },
-  imgCont: {
-    textAlign: "center",
-    padding: "10px",
   },
   img: {
     borderRadius: "10px",

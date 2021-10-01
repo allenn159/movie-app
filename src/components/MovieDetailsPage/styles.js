@@ -52,4 +52,11 @@ export default makeStyles((theme) => ({
     maxWidth: "60px",
     height: "auto",
   },
+  button: {
+    marginTop: "10px",
+    backgroundColor: "#A239EA",
+    color: "#fff",
+    fontFamily: "Lato",
+    width: "100%",
+  },
 }));

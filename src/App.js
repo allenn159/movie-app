@@ -22,6 +22,7 @@ function App() {
           </Route>
           <Route exact path="/movie/:id">
             <MovieDetails
+              searchResults={searchResults}
               setSearchResults={setSearchResults}
               movieID={movieID}
             />

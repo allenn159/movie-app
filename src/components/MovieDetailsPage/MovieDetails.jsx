@@ -1,19 +1,32 @@
 import React, { useEffect, useState } from "react";
 import api from "../../api/index";
+import SearchDrawer from "./SearchDrawer/SearchDrawer";
 import { useHistory } from "react-router-dom";
 
-import { Container, Grid, Paper, Typography, Button } from "@material-ui/core";
+import {
+  Container,
+  Grid,
+  Paper,
+  Typography,
+  Button,
+  SwipeableDrawer,
+} from "@material-ui/core";
 import useStyles from "./styles";
 
 import rt from "../../assets/rt.jpg";
 import fresh from "../../assets/fresh.svg";
 import splat from "../../assets/splat.svg";
 
-const MovieDetails = ({ movieID }) => {
+const MovieDetails = ({ movieID, searchResults, setSearchResults }) => {
   const [movie, setMovie] = useState(null);
+  const [open, setOpen] = useState(false);
 
   const classes = useStyles();
   let history = useHistory();
+
+  const toggleDrawer = () => {
+    setOpen(!open);
+  };
 
   const searchByID = async (id) => {
     const { data } = await api.get("/", {
@@ -83,8 +96,29 @@ const MovieDetails = ({ movieID }) => {
               )}
             </div>
           </Paper>
+          <Button
+            onClick={toggleDrawer}
+            className={classes.button}
+            variant="contained"
+          >
+            New Search
+          </Button>
         </Grid>
       </Grid>
+      <SwipeableDrawer
+        anchor={"left"}
+        open={open}
+        onOpen={toggleDrawer}
+        onClose={toggleDrawer}
+      >
+        <SearchDrawer
+          searchResults={searchResults}
+          setSearchResults={setSearchResults}
+          searchByID={searchByID}
+          setMovie={setMovie}
+          setOpen={setOpen}
+        />
+      </SwipeableDrawer>
     </Container>
   );
 };
