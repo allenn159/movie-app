@@ -103,7 +103,7 @@ export default makeStyles((theme) => ({
     height: "40px",
     width: "48%",
   },
-  green: {
+  blue: {
     fontFamily: "Arvo",
     fontSize: "18px",
     color: "#0E49B5",

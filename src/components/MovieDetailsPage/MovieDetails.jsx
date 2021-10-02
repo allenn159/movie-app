@@ -25,7 +25,7 @@ const MovieDetails = ({ movieID, searchResults, setSearchResults }) => {
   let history = useHistory();
 
   const toggleDrawer = () => {
-    setOpen(!open);
+    setOpen(open => !open);
     setSearchResults(null);
   };
 

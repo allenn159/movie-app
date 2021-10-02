@@ -36,7 +36,7 @@ const RightMovie = ({
                 !leftMovie
                   ? classes.reviewText
                   : rightBO >= leftBO
-                  ? classes.green
+                  ? classes.blue
                   : classes.red
               }
             >
@@ -48,7 +48,7 @@ const RightMovie = ({
                 !leftMovie
                   ? classes.reviewText
                   : rightMS >= leftMS
-                  ? classes.green
+                  ? classes.blue
                   : classes.red
               }
             >
@@ -59,7 +59,7 @@ const RightMovie = ({
                 !leftMovie
                   ? classes.reviewText
                   : rightRating >= leftRating
-                  ? classes.green
+                  ? classes.blue
                   : classes.red
               }
             >

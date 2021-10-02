@@ -18,6 +18,9 @@ const LeftMovie = ({
   const rightMS = parseInt(rightMovie?.Metascore.replace(/[^\w]/g, ""));
   const rightRating = parseInt(rightMovie?.imdbRating.replace(/[^\w]/g, ""));
 
+  console.log(leftMovie);
+  console.log(leftBO);
+
   return (
     <div>
       <Paper className={classes.paper}>
@@ -36,7 +39,7 @@ const LeftMovie = ({
                 !rightMovie
                   ? classes.reviewText
                   : leftBO >= rightBO
-                  ? classes.green
+                  ? classes.blue
                   : classes.red
               }
             >
@@ -48,7 +51,7 @@ const LeftMovie = ({
                 !rightMovie
                   ? classes.reviewText
                   : leftMS >= rightMS
-                  ? classes.green
+                  ? classes.blue
                   : classes.red
               }
             >
@@ -59,7 +62,7 @@ const LeftMovie = ({
                 !rightMovie
                   ? classes.reviewText
                   : leftRating >= rightRating
-                  ? classes.green
+                  ? classes.blue
                   : classes.red
               }
             >

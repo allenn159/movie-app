@@ -17,18 +17,18 @@ const ComparePage = ({ setSearchResults, searchResults }) => {
   const [rightMovie, setRightMovie] = useState(null);
 
   const toggleLeftDrawer = () => {
-    setOpenLeft(!openLeft);
+    setOpenLeft((openLeft) => !openLeft);
     setSearchResults(null);
   };
 
   const toggleRightDrawer = () => {
-    setOpenRight(!openRight);
+    setOpenRight((openRight) => !openRight);
     setSearchResults(null);
   };
 
   useEffect(() => {
     setSearchResults(null);
-  }, []);
+  }, [setSearchResults]);
 
   return (
     <Container className={classes.cont} maxWidth="lg">
